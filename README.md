@@ -2,7 +2,7 @@
 
 <div align="center"> 
   <img src="./app/assets/images/karim_barragan.jpg" />
-  <img src="./app/assets/images/john_palacios.jpg" />
+  <img src="./app/assets/images/john_palacios.png" />
   <h3>
     <b>John Palacios & Karim Barragan</b>
   </h3>

@@ -1,9 +1,10 @@
 <a name="readme-top"></a>
 
-<div align="center">
+<div align="center"> 
+  <img src="./app/assets/images/karim_barragan.jpg" />
+  <img src="./app/assets/images/john_palacios.jpg" />
   <h3>
-    <b>John Palacios & Karim Barragan
-    </b>
+    <b>John Palacios & Karim Barragan</b>
   </h3>
 </div>
 

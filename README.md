@@ -26,7 +26,7 @@
 
 # 📖 Rails - Recipe App <a name="about-project"></a>
 
-**The Recipe** app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Built with Ruby, Rails, and TailwindCSS.
+**The Recipe App** is your ultimate culinary companion, designed to streamline your cooking experience. It effortlessly manages your recipes, ingredients, and inventory, ensuring a seamless cooking journey.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -40,7 +40,7 @@
      <a href="https://www.ruby-lang.org/en/">Ruby</a>
     </li>
     <li>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" width="100px" height="100px"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" width="125px" height="100px"/>
       <a href="https://tailwindcss.com/">TailwindCSS</a>
     </li>
   </ul>
@@ -70,7 +70,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Coming soon
+- 📋 Save and organize ingredients
+- 📊 Keep track of your pantry inventory
+- 📝 Create and store your favorite recipes
+- 🛒 Generate a smart shopping list based on your recipes
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

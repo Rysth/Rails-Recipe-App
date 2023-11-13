@@ -1,11 +1,8 @@
 <a name="readme-top"></a>
 
 <div align="center"> 
-  <img src="./app/assets/images/karim_barragan.jpg" />
-  <img src="./app/assets/images/john_palacios.png" />
-  <h3>
-    <b>John Palacios & Karim Barragan</b>
-  </h3>
+  [<img src="./app/assets/images/karim_barragan.jpg" />](https://www.linkedin.com/in/karim-barragan)
+  [<img src="./app/assets/images/john_palacios.png" />](https://www.linkedin.com/in/john-palacios-rysthcraft/)
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -27,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 RoR Blog App <a name="about-project"></a>
+# 📖 Rails - Recipe App <a name="about-project"></a>
 
-**RoR Blog App** is a simple backend application where we can interact with users, posts, comments, and likes.
+**The Recipe** app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Built with Ruby, Rails, and TailwindCSS.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -38,21 +35,34 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/2048px-Ruby_logo.svg.png" width="100px" height="100px"/>
+     <a href="https://www.ruby-lang.org/en/">Ruby</a>
+    </li>
+    <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" width="100px" height="100px"/>
+      <a href="https://tailwindcss.com/">TailwindCSS</a>
+    </li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li>
+      <img src="https://pbs.twimg.com/media/CZGHPChUAAA3jqE.png" width="100px" height="100px"/>
+      <a href="https://rubyonrails.org/">Ruby on Rails</a>
+    </li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png" width="100px" height="100px"/>
+      <a href="https://www.postgresql.org/">PostgreSQL</a>
+    </li>
   </ul>
 </details>
 
@@ -60,9 +70,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Interact with Users**
-- **Add Comments and Likes as Users**
-- **Look new post every day**
+- Coming soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,7 +103,12 @@ To run the project, execute the following command:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Karim Barragan**
+
+- GitHub: [@rysthcraft](https://github.com/Rebelzob)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/karim-barragan/)
+
+👤 **John Palacios**
 
 - GitHub: [@rysthcraft](https://github.com/Rysth)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/john-palacios-rysthcraft)
@@ -106,8 +119,7 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement a user interface with React.**
-- [ ] **Make a simple console interface to handle queries.**
+- [ ] **Coming soon.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

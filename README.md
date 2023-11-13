@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
 <div align="center"> 
-  [<img src="./app/assets/images/karim_barragan.jpg" />](https://www.linkedin.com/in/karim-barragan)
-  [<img src="./app/assets/images/john_palacios.png" />](https://www.linkedin.com/in/john-palacios-rysthcraft/)
+  <img src="./app/assets/images/karim_barragan.jpg" />
+  <img src="./app/assets/images/john_palacios.png" />
 </div>
 
 <!-- TABLE OF CONTENTS -->

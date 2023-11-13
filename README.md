@@ -1,11 +1,10 @@
 <a name="readme-top"></a>
 
 <div align="center">
-<<<<<<< HEAD
-  <h3><b>John Palacios</b></h3>
-=======
-  <h3><b>Your Name</b></h3>
->>>>>>> e6a2998edda9c47bde007abe194b9ea77453438a
+  <h3>
+    <b>John Palacios & Karim Barragan
+    </b>
+  </h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->

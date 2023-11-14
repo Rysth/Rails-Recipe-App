@@ -5,6 +5,15 @@
   --FF-poppins: 'Poppins', sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: var(--FF-poppins);
+}
+
+.btn-orange {
+  @apply bg-[var(--CL-orange)];
 }

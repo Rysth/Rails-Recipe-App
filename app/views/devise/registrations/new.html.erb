@@ -1,6 +1,6 @@
 <div class="relative h-full text-gray-900">
-  <div class="absolute inset-0 brightness-[25%]  grayscale">
-    <img src="https://images.pexels.com/photos/5907603/pexels-photo-5907603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="object-cover w-full h-full">
+  <div class="absolute inset-0">
+    <img src="https://images.pexels.com/photos/5907603/pexels-photo-5907603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="object-cover w-full h-full grayscale brightness-[25%]">
   </div>
   <div class="container flex items-center justify-center h-full max-w-screen-xl mx-auto z-[1000] relative">
     <div class="p-6 bg-white shadow-2xl rounded-xl min-w-[325px] sm:min-w-[350px] max-w-[375px] md:p-8">
@@ -11,12 +11,12 @@
           <fieldset class="flex flex-col gap-4 text-sm">
             <div class="field w-full min-w-[200px]">
               <%= f.label :name %>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: " border rounded-md p-1.5 w-full"%>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "border rounded-md p-1.5 w-full"%>
             </div>
 
             <div class="field w-full min-w-[200px]">
               <%= f.label :email %>
-              <%= f.email_field :email, autocomplete: "email", class: " border rounded-md p-1.5 w-full" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: " border rounded-md p-1.5 w-full" %>
             </div>
 
             <div class="field w-full min-w-[200px]">
@@ -32,7 +32,7 @@
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="actions">
-              <%= f.submit "Sign up", class: 'btn btn-orange float-right bg-[var(--CL-orange)] border-none' %>
+              <%= f.submit "Sign up", class: 'btn float-right bg-[var(--CL-orange)] border-none text-white' %>
             </div>
 
           </fieldset>

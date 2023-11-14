@@ -1,26 +1,37 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="relative h-full text-gray-900">
+  <div class="absolute inset-0 ">
+    <img src="https://images.pexels.com/photos/5907603/pexels-photo-5907603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="object-cover w-full h-full grayscale brightness-[25%]">
   </div>
+  <div class="container flex items-center justify-center h-full max-w-screen-xl mx-auto z-[1000] relative">
+    <div class="p-6 bg-white shadow-2xl rounded-xl min-w-[325px] sm:min-w-[350px] max-w-[375px] md:p-8">
+      <header class="mb-5">
+        <h2 class="block text-4xl antialiased font-bold text-center">Join Now!</h2>
+      </header>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'mb-3 block p-5') do |f| %>
+        <fieldset class="flex flex-col gap-4 text-sm">
+          <div class="field field w-full min-w-[200px]">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border rounded-md p-1.5 w-full" %>
+          </div>
+          <div class="field field w-full min-w-[200px]">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "border rounded-md p-1.5 w-full" %>
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="field field w-full min-w-[200px]">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <div class="actions">
+            <%= f.submit "Log in", class: 'btn float-right bg-[var(--CL-orange)] border-none text-white' %>
+          </div>
+        </fieldset>
+      <% end %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= render "devise/shared/links" %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>

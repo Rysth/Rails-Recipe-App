@@ -78,3 +78,5 @@ gem 'foreman', '~> 0.87.2'
 gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'devise', '~> 4.9'
+gem 'faker', '~> 3.2', '>= 3.2.1'
+

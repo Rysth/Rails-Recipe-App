@@ -19,7 +19,18 @@
 
   <body class="h-full">
     <main class="h-full">
-    
+       <header class="toast toast-bottom toast-start fixed z-[1000] bottom-20 right-3">
+        <% if alert %>
+          <div class="alert alert-success">
+            <p class="p-1 text-sm rounded-md bg-warning"><%= alert %></p>
+          </div>
+        <% end %>
+        <% if notice %>
+          <div class="alert alert-success">
+            <p class="p-1 text-sm rounded-md bg-success"><%= notice %></p>
+          </div>
+        <% end %>
+       </header>
       <%= yield %>
       <%= render 'partials/repository' %>
     </main>

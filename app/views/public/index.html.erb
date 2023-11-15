@@ -1,34 +1,26 @@
 <div>
   <h1 class="py-10 sm:py-16 text-2xl font-bold text-center sm:my-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Public Recipes</h1>
   <div class="container max-w-screen-lg p-4 mx-auto">
-    <header class="flex items-center mb-5">
-      <% if alert %>
-        <p class="p-2 rounded-md bg-info"><%= alert %></p>
-      <% end %>
-      <% if notice %>
-        <p class="p-2 rounded-md bg-info"><%= notice %></p>
-      <% end %>
-    </header>
   <ul class="grid gap-5 p-0 list-none">
     <% @recipes.each do |recipe| %>
-      <li>
-        <a href="/recipes/<%= recipe.id %>" class="grid items-center gap-5 p-4 py-6 border cursor-pointer recipe-item sm:grid-cols-2 rounded-xl md:transition md:hover:shadow-2xl md:hover:-translate-y-1">
-          <header class="flex items-center justify-between gap-5 recipe-info sm:flex-col sm:items-start sm:gap-0">
-            <h2 class="text-xl font-semibold sm:text-3xl md:text-4xl">
-              <%= recipe.name %>
-            </h2>
-            <p class="text-xs sm:text-sm sm:mt-1">By: <%= recipe.user.name %></p>
-          </header>
-          <div class="text-base text-justify md:text-xl sm:text-left">
-            <p class="w-max">Total Food Items: 4</p>
-            <p class="w-max">Total Price: $203</p>
-            <% if current_user %>
-              <% if current_user.id === recipe.user.id %>
-               <%= button_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'float-right text-white bg-red-600 rounded-full btn btn-sm btn-error' %>
-              <% end %>
+      <li class="grid items-center gap-5 p-4 py-6 border cursor-pointer recipe-item sm:grid-cols-2 rounded-xl md:transition md:hover:shadow-2xl md:hover:-translate-y-1">
+        <header class="flex items-center justify-between gap-5 recipe-info sm:flex-col sm:items-start sm:gap-0">
+          <a href="/recipes/<%= recipe.id %>" >
+              <h2 class="text-xl font-semibold truncate sm:text-3xl md:text-4xl text-ellipsis max-w-[30rem]">
+                <%= recipe.name %>
+              </h2>
+          </a>
+          <p class="text-xs sm:text-sm sm:mt-1">By: <%= recipe.user.name %></p>
+        </header>
+        <div class="text-base text-justify md:text-xl sm:text-left">
+          <p class="w-max">Total Food Items: 4</p>
+          <p class="w-max">Total Price: $203</p>
+          <% if current_user %>
+            <% if current_user.id === recipe.user.id %>
+              <%= button_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'float-right text-white bg-red-600 rounded-full btn btn-sm btn-error' %>
             <% end %>
-          </div>
-        </a>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>

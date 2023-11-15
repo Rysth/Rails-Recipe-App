@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
     @recipe = Recipe.find(params[:id])
-    @public = !(@recipe.public == true)
+    @public = @recipe.public != true
     @recipe.update(public: @public)
 
     respond_to do |format|

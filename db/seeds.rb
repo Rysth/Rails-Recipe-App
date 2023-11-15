@@ -9,15 +9,15 @@
 end
 
 # Create some foods for each user
-User.all.each do |user|
-  5.times do
-    user.foods.create!(
-      name: Faker::Food.ingredient,
-      measurement_unit: Faker::Measurement.metric_volume,
-      price: rand(1..10)
-    )
-  end
-end
+# User.all.each do |user|
+#   5.times do
+#     user.foods.create!(
+#       name: Faker::Food.ingredient,
+#       measurement_unit: Faker::Measurement.metric_volume,
+#       price: rand(1..10)
+#     )
+#   end
+# end
 
 # Create some recipes for each user
 User.all.each do |user|
@@ -31,11 +31,11 @@ User.all.each do |user|
     )
 
     # Add some foods to each recipe
-    3.times do
-      recipe.recipe_foods.create!(
-        food: user.foods.sample,
-        quantity: rand(1..5)
-      )
-    end
+    # 3.times do
+    #   recipe.recipe_foods.create!(
+    #     food: user.foods.sample,
+    #     quantity: rand(1..5)
+    #   )
+    # end
   end
 end

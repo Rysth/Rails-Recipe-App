@@ -3,7 +3,7 @@
   <div class="container max-w-screen-lg p-4 mx-auto">
     <header class="flex flex-col">
       <div class="flex items-center justify-between mb-5 text-base">
-        <p class="font-bold sm:text-2xl md:text-4xl lg:text-5xl"><%= @recipe.name %></p>
+        <p class="text-2xl font-bold md:text-4xl lg:text-5xl"><%= @recipe.name %></p>
         
         <% if current_user == @recipe.user %>
           <% if @recipe.public %>
@@ -20,8 +20,32 @@
     <div class="flex items-center justify-between mt-5">
       <%= button_to 'Generate Shopping List', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
       <% if current_user == @recipe.user %>
-        <%= button_to 'Add Ingredient', recipe_path(@recipe), method: :put, class: 'text-white btn-success rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
+        <%= button_to 'Add Ingredient', edit_recipe_path(@recipe), method: :get, class: 'text-white btn-success rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
       <% end %>
+    </div>
+     <div class="mt-5 overflow-auto max-h-96">
+      <table class="w-full">
+        <thead class="text-white rounded-none">
+          <tr class="rounded-none">
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Food</th>
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Quantity</th>
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Price</th>
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @recipe_foods.each do |food| %>
+            <tr class="min-w-[175px] border text-sm">
+              <td class="p-2"><%= food.name %></td>
+              <td class="p-2"><%= food.quantity %></td>
+              <td class="p-2"><%= number_to_currency((food.price * food.quantity), precision: 2) %></td>
+              <td class="flex justify-center p-2">
+                <%= button_to "Remove", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

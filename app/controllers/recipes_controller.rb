@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[show update destroy]
+  before_action :set_recipe, only: %i[new show edit update destroy]
   before_action :authenticate_user!, except: %i[public show]
 
   # GET /recipes or /recipes.json
@@ -9,7 +9,10 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = Recipe.new
+  end
+
+  def edit
+    @foods = Food.all
   end
 
   # GET /recipes/1 or /recipes/1.json

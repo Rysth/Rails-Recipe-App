@@ -5,10 +5,12 @@
       <div class="flex items-center justify-between mb-5 text-base">
         <p class="font-bold sm:text-2xl md:text-4xl lg:text-5xl"><%= @recipe.name %></p>
         
-        <% if @recipe.public %>
-          <%= button_to 'Public', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-cyan-500 border-none text-white' %>
-        <% else %>
-          <%= button_to 'Private', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>
+        <% if current_user == @recipe.user %>
+          <% if @recipe.public %>
+            <%= button_to 'Public', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-cyan-500 border-none text-white' %>
+          <% else %>
+            <%= button_to 'Private', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>
+          <% end %>
         <% end %>
       </div>
       <p class="font-semibold sm:text-xl">Preparation Time: <%= @recipe.preparation_time %> min</p>

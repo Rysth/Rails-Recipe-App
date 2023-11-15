@@ -1,0 +1,32 @@
+<div>
+  <h1 class="py-10 sm:py-16 text-2xl font-bold text-center sm:my-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">List of Foods</h1>
+   <div class="container grid w-full max-w-screen-lg gap-5 p-4 mx-auto">
+    <div class="overflow-auto max-h-96">
+      <table class="w-full">
+        <thead class="text-white rounded-none">
+          <tr class="rounded-none">
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Food</th>
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Measurement Unit</th>
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Price</th>
+            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr class="min-w-[175px] border text-sm">
+              <td class="p-2"><%= food.name %></td>
+              <td class="p-2"><%= food.measurement_unit %></td>
+              <td class="p-2"><%= number_to_currency(food.price, precision: 2) %></td>
+              <td class="flex justify-center p-2">
+                <%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <header>
+      <%= link_to 'Add Food', new_food_path, class: 'float-right text-white bg-green-600 rounded-full btn btn-success border-none' %>
+    </header>
+  </div>
+</div>

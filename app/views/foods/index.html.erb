@@ -1,0 +1,34 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td>
+            <% if false %>
+              <%= false %>
+            <% end %>
+            <%= food.measurement_unit %>
+          </td>
+          <% if true %>
+            <td><%= food.price %></td>
+          <% end %>
+          <td>
+            <%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= link_to 'Add Food', new_food_path %> 
+  </div>
+</div>

@@ -17,7 +17,9 @@
     </header>
     <div class="flex items-center justify-between mt-5">
       <%= button_to 'Generate Shopping List', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
-      <%= button_to 'Add Ingredient', recipe_path(@recipe), method: :put, class: 'text-white btn-success rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
+      <% if current_user == @recipe.user %>
+        <%= button_to 'Add Ingredient', recipe_path(@recipe), method: :put, class: 'text-white btn-success rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
+      <% end %>
     </div>
   </div>
 </div>

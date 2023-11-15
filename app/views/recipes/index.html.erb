@@ -10,6 +10,7 @@
           </h2>
 
           <button class="remove-recipe" data-method="delete" data-remote="true">Remove</button>
+          <%= link_to 'Remove Recipe', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'remove-recipe' %>
         </div>
 
         <p class="recipe-description"><%= recipe.description %></p>

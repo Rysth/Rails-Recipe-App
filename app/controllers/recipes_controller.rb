@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[ show update destroy ]
+  before_action :set_recipe, only: %i[show update destroy]
   before_action :authenticate_user!, except: %i[public show]
 
   # GET /recipes or /recipes.json
@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
+        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
         redirect_to recipes_path
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,12 +42,12 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
     @recipe = Recipe.find(params[:id])
-    @public = @recipe.public == true ? false : true
+    @public = !(@recipe.public == true)
     @recipe.update(public: @public)
 
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully updated." }
+        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
         redirect_to recipes_path
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,11 +60,12 @@ class RecipesController < ApplicationController
     @recipe.destroy!
 
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: "Recipe was successfully destroyed." }
+      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
     end
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe
     @recipe = Recipe.find(params[:id])
@@ -73,5 +74,5 @@ class RecipesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
-  end     
+  end
 end

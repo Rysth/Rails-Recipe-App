@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="welcome-title">Welcome!</h1>
+
+  <ul class="recipes-list">
+    <% @recipes.each do |recipe| %>
+      <li class="recipe-item">
+        <div class="recipe-info">
+          <h2 class="recipe-name">
+            <a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a>
+          </h2>
+
+          <button class="remove-recipe" data-method="delete" data-remote="true">Remove</button>
+        </div>
+
+        <p class="recipe-description"><%= recipe.description %></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if @recipes.empty? %>
+    <p class="no-recipes">There are no Recipes</p>
+  <% end %>
+
+  <button class="add-recipe">Add Recipe</button>
+</div>

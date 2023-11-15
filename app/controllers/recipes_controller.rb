@@ -12,7 +12,12 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    unless current_user == @recipe.user
+      redirect_to root_path, alert: 'You cannot access it.'
+      return
+    end
     @foods = Food.all
+    @recipe_food = RecipeFood.new
   end
 
   # GET /recipes/1 or /recipes/1.json

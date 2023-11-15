@@ -1,6 +1,14 @@
 <div>
   <h1 class="py-10 sm:py-16 text-2xl font-bold text-center sm:my-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Public Recipes</h1>
   <div class="container max-w-screen-lg p-4 mx-auto">
+    <header class="flex items-center">
+      <% if alert %>
+        <p class="p-2 bg-info"><%= alert %></p>
+      <% end %>
+      <% if notice %>
+        <p class="p-2 bg-info"><%= notice %></p>
+      <% end %>
+    </header>
   <ul class="grid gap-5 p-0 list-none">
     <% @recipes.each do |recipe| %>
       <li>
@@ -16,7 +24,7 @@
             <p class="w-max">Total Price: $203</p>
             <% if current_user %>
               <% if current_user.id === recipe.user.id %>
-                <button type="button" class="float-right text-white bg-red-600 rounded-full btn btn-sm btn-error">Remove</button>
+               <%= button_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'float-right text-white bg-red-600 rounded-full btn btn-sm btn-error' %>
               <% end %>
             <% end %>
           </div>

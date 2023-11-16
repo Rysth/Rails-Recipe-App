@@ -26,7 +26,6 @@ class RecipesController < ApplicationController
       return
     end
     @recipe_foods = @recipe.recipe_foods.includes(:food)
-    @foods = @recipe_foods.map(&:food)
   end
 
   # GET /recipes/public
@@ -52,12 +51,11 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
-    @public = @recipe.public != true
-    @recipe.update(public: @public)
+    @public = !@recipe.public
 
     respond_to do |format|
-      if @recipe.update(recipe_params)
-        format.html { redirect_to recipes_url, notice: 'Recipe was successfully updated.' }
+      if @recipe.update(public: @public)
+        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

@@ -1,8 +1,31 @@
 @import url('https://fonts.cdnfonts.com/css/poppins');
 
+/* styles.css */
+
+/* Define the styles for the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners of the thumb */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
 :root {
-  --CL-orange: #ff4a22;
+  --CL-orange: #f04721;
   --FF-poppins: 'Poppins', sans-serif;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--CL-orange); /* Color of the scrollbar thumb on hover */
 }
 
 body {

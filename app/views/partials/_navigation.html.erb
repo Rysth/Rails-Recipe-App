@@ -1,14 +1,17 @@
 <header class="sticky top-0 z-[1001] w-full bg-white border-b border-gray-200 start-0 text-gray-900">
     <nav>
-      <div class="flex flex-wrap items-center justify-between max-w-screen-lg p-4 mx-auto">
-      <%= link_to 'Recipe App', root_path, class: 'uppercase flex items-center space-x-3 rtl:space-x-reverse self-center text-2xl font-semibold whitespace-nowrap' %>
+      <div class="flex items-center justify-between max-w-screen-lg p-4 mx-auto">
+      <a href=<%= root_path %> class="flex items-center text-xl font-semibold md:hover:bg-gray-200 md:transition">
+        <%= image_tag("brand.svg", alt: "Example Image", class:'w-10') %>
+       <span class="ml-2"> Recipe App</span>
+      </a>
       <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <% unless current_user %>
             <%= link_to 'Log In', new_user_session_path, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
           <% else %>
             <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
           <% end %>
-          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <button data-collapse-toggle="navbar-sticky" type="button" class="items-center justify-center hidden w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -21,8 +24,11 @@
             <%= link_to 'Public Recipes', root_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
           <% if current_user %>
-            <li>
+          <li>
             <%= link_to 'My Recipes', recipes_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
+          </li>
+          <li>
+            <%= link_to 'Food List', foods_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
           <% end %>
         </ul>

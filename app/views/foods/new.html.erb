@@ -1,12 +1,14 @@
-<div class="w-full mx-auto md:w-2/3">
-  <h1 class="text-4xl font-bold">New food</h1>
+<h1 class="py-10 sm:py-16  md:py-24 text-2xl font-bold text-center sm:mb-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Foods</h1>
+<div class="container max-w-screen-lg p-4 mx-auto">
+  <h2 class="text-2xl font-bold md:text-4xl lg:text-5xl">Add New Food</h2>
 
-  <%= link_to "Back to foods", foods_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-
-  <%= form_with url: foods_path, model: @food, method: :post do |form| %>
-    <%= form.text_field :name, placeholder:"Enter food name here"%>
-    <%= form.select :measurement_unit, [["grams"], ["kilos"], ["liters"], ["mililiters"]]%>
-    <%= form.text_area :price, placeholder:"Enter price"%>
-    <%= form.submit "Add new food"%>
+  <%= form_with url: foods_path, model: @food, method: :post, class: 'grid gap-5 mt-5 sm:mt-8' do |form| %>
+    <%= form.text_field :name, placeholder:"Food Name"%>
+    <%= form.select :measurement_unit, [["Grams"], ["Kilos"], ["Liters"], ["Mililiters"]]%>
+    <%= form.number_field :price, placeholder:"Price"%>
+    <%= form.number_field :quantity, placeholder:"Quantity"%>
+    <fieldset>
+      <%= form.submit "Add new food", class:'float-right text-white bg-green-600 rounded-full btn btn-success border-none'%>
+    </fieldset>
   <% end %>
 </div>

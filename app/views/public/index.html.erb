@@ -13,8 +13,8 @@
           <p class="text-xs sm:text-sm sm:mt-1">By: <%= recipe.user.name %></p>
         </header>
         <div class="text-base text-justify md:text-xl sm:text-left">
-          <p class="w-max">Total Food Items: 4</p>
-          <p class="w-max">Total Price: $203</p>
+          <p class="w-max">Total Food Items: <%= recipe.recipe_foods.sum(&:quantity) %></p>
+          <p class="w-max">Total Price: <%= number_to_currency(recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price * recipe_food.quantity }, precision: 2) %></p>
           <% if current_user %>
             <% if current_user.id === recipe.user.id %>
               <%= button_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'float-right text-white bg-red-600 rounded-full btn btn-sm btn-error' %>
@@ -26,7 +26,7 @@
   </ul>
 
   <% if @recipes.empty? %>
-    <p class="text-sm italic">There are no public recipes.</p>
+    <p class="text-sm italic text-center">There are no public recipes.</p>
   <% end %>
   </div>
 </div>

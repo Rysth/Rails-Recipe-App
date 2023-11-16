@@ -21,8 +21,11 @@
             <%= link_to 'Public Recipes', root_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
           <% if current_user %>
-            <li>
+          <li>
             <%= link_to 'My Recipes', recipes_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
+          </li>
+          <li>
+            <%= link_to 'Foods List', foods_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
           <% end %>
         </ul>

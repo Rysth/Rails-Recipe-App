@@ -18,7 +18,10 @@
               <td class="p-2"><%= food.measurement_unit %></td>
               <td class="p-2"><%= number_to_currency(food.price, precision: 2) %></td>
               <td class="flex justify-center p-2">
-                <%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
+                
+                <% if current_user == food.user %>
+                  <%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
+                <% end %>
               </td>
             </tr>
           <% end %>

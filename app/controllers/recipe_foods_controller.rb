@@ -20,15 +20,15 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new(recipe_food_params)
-    @recipe_food.food.update(quantity: params[:recipe_food][:quantity]) 
+    @recipe_food.food.update(quantity: params[:recipe_food][:quantity])
     @recipe_food.recipe = @recipe
 
     respond_to do |format|
       if @recipe_food.save
-         format.html { redirect_to recipe_path(@recipe), notice: 'Food was successfully added.' }
+        format.html { redirect_to recipe_path(@recipe), notice: 'Food was successfully added.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-     end
+      end
     end
   end
 

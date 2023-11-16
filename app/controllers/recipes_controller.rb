@@ -8,8 +8,7 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/new
-  def new
-  end
+  def new; end
 
   def edit
     unless current_user == @recipe.user

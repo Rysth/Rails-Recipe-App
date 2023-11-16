@@ -1,12 +1,10 @@
 <header class="sticky top-0 z-[1001] w-full bg-white border-b border-gray-200 start-0 text-gray-900">
     <nav>
       <div class="flex flex-wrap items-center justify-between max-w-screen-lg p-4 mx-auto">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <span class="self-center text-2xl font-semibold whitespace-nowrap">Recipe App</span>
-      </a>
+      <%= link_to 'Recipe App', root_path, class: 'uppercase flex items-center space-x-3 rtl:space-x-reverse self-center text-2xl font-semibold whitespace-nowrap' %>
       <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <% unless current_user %>
-            <%= link_to 'Log In', new_user_session_path, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
+            <%= link_to 'Log In', new_user_session_path, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
           <% else %>
             <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
           <% end %>
@@ -20,14 +18,13 @@
       <div class="items-center justify-between hidden w-full text-sm text-gray-900 md:flex md:w-auto md:order-1 " id="navbar-sticky">
         <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
           <li>
-            <%= link_to 'Home', root_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
+            <%= link_to 'Public Recipes', root_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
-          <li>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:dark:hover:bg-transparent dark:border-gray-700 md:transition">About</a>
+          <% if current_user %>
+            <li>
+            <%= link_to 'My Recipes', recipes_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
-          <li>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:dark:hover:bg-transparent dark:border-gray-700 md:transition">Services</a>
-          </li>
+          <% end %>
         </ul>
       </div>
       </div>

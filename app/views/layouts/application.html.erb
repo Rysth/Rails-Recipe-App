@@ -21,13 +21,13 @@
     <main class="h-full">
        <header class="toast toast-bottom toast-start fixed z-[1000] bottom-20 right-3">
         <% if alert %>
-          <div class="alert alert-success">
-            <p class="p-1 text-sm rounded-md bg-warning"><%= alert %></p>
+          <div class="alert alert-error">
+            <p class="p-1 text-sm"><%= alert %></p>
           </div>
         <% end %>
         <% if notice %>
           <div class="alert alert-success">
-            <p class="p-1 text-sm rounded-md bg-success"><%= notice %></p>
+            <p class="p-1 text-sm"><%= notice %></p>
           </div>
         <% end %>
        </header>

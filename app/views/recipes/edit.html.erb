@@ -1,0 +1,11 @@
+<h1 class="py-10 sm:py-16 text-2xl font-bold text-center sm:my-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Recipe #<%= @recipe.id %></h1>
+<div class="container max-w-screen-lg p-4 mx-auto">
+  <h2 class="text-2xl font-bold md:text-4xl lg:text-5xl">Add Ingredient</h2>
+  <%= form_with url: recipe_recipe_foods_path(@recipe), model: @recipe_food, method: :post, class: 'grid gap-5 mt-5 sm:mt-8' do |form| %>
+    <%= form.select :food_id, options_for_select(@foods.map { |food| ["#{food.name} - #{number_to_currency(food.price, precision: 2)}", food.id] })%>
+    <%= form.number_field :quantity, placeholder:"Quantity"%>
+    <fieldset>
+      <%= form.submit "Add new ingredient", class:'float-right text-white bg-green-600 rounded-full btn btn-success border-none'%>
+    </fieldset>
+  <% end %>
+</div>

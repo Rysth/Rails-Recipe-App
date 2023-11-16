@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[show update destroy]
+  before_action :set_recipe, only: %i[new show edit update destroy]
   before_action :authenticate_user!, except: %i[public show]
 
   # GET /recipes or /recipes.json
@@ -8,14 +8,25 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/new
-  def new
-    @recipe = Recipe.new
+  def new; end
+
+  def edit
+    unless current_user == @recipe.user
+      redirect_to root_path, alert: 'You cannot access it.'
+      return
+    end
+    @foods = Food.all
+    @recipe_food = RecipeFood.new
   end
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @recipe = Recipe.find(params[:id])
+    unless @recipe.public || current_user == @recipe.user
+      redirect_to root_path, alert: 'You cannot access it.'
+      return
+    end
     @recipe_foods = @recipe.recipe_foods.includes(:food)
+    @foods = @recipe_foods.map(&:food)
   end
 
   # GET /recipes/public
@@ -41,14 +52,12 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
-    @recipe = Recipe.find(params[:id])
     @public = @recipe.public != true
     @recipe.update(public: @public)
 
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
-        redirect_to recipes_path
+        format.html { redirect_to recipes_url, notice: 'Recipe was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

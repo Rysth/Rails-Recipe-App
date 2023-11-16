@@ -26,21 +26,21 @@
      <div class="mt-5 overflow-auto max-h-96">
       <table class="w-full">
         <thead class="text-white rounded-none">
-          <tr class="rounded-none">
-            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Food</th>
-            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Quantity</th>
-            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Price</th>
-            <th class="py-2 bg-[var(--CL-orange)] min-w-[175px]">Actions</th>
+          <tr class="rounded-none text-left bg-[var(--CL-orange)]">
+            <th class="p-2 min-w-[175px]">Food</th>
+            <th class="p-2 min-w-[175px]">Quantity</th>
+            <th class="p-2 min-w-[175px]">Price</th>
+            <th class="p-2 min-w-[175px]">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <% @recipe_foods.each do |food| %>
+          <% @recipe_foods.each do |recipe_food| %>
             <tr class="min-w-[175px] border text-sm">
-              <td class="p-2"><%= food.name %></td>
-              <td class="p-2"><%= food.quantity %></td>
-              <td class="p-2"><%= number_to_currency((food.price * food.quantity), precision: 2) %></td>
+              <td class="p-2"><%= recipe_food.food.name %></td>
+              <td class="p-2"><%= recipe_food.quantity %></td>
+              <td class="p-2"><%= number_to_currency((recipe_food.food.price * recipe_food.quantity), precision: 2) %></td>
               <td class="flex justify-center p-2">
-                <%= button_to "Remove", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
+                <%= button_to "Remove", food_path(recipe_food.food.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
               </td>
             </tr>
           <% end %>

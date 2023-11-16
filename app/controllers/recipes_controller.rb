@@ -27,6 +27,7 @@ class RecipesController < ApplicationController
       return
     end
     @recipe_foods = @recipe.recipe_foods.includes(:food)
+    @foods = @recipe_foods.map(&:food)
   end
 
   # GET /recipes/public

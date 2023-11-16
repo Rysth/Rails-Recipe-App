@@ -5,11 +5,6 @@
   --FF-poppins: 'Poppins', sans-serif;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   font-family: var(--FF-poppins);
 }

@@ -1,4 +1,4 @@
-<h1 class="py-10 sm:py-16 text-2xl font-bold text-center sm:my-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Recipe #<%= @recipe.id %></h1>
+<h1 class="py-10 sm:py-16  md:py-24 text-2xl font-bold text-center sm:mb-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Recipe #<%= @recipe.id %></h1>
 <div class="container max-w-screen-lg p-4 mx-auto">
   <h2 class="text-2xl font-bold md:text-4xl lg:text-5xl">Add Ingredient</h2>
   <%= form_with url: recipe_recipe_foods_path(@recipe), model: @recipe_food, method: :post, class: 'grid gap-5 mt-5 sm:mt-8' do |form| %>

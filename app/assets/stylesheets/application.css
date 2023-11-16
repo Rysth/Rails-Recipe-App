@@ -7,11 +7,6 @@
   width: 12px; /* Width of the scrollbar */
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--CL-orange); /* Color of the scrollbar thumb on hover */
-}
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888; /* Color of the scrollbar thumb */
@@ -26,6 +21,11 @@
 :root {
   --CL-orange: #f04721;
   --FF-poppins: 'Poppins', sans-serif;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--CL-orange); /* Color of the scrollbar thumb on hover */
 }
 
 body {

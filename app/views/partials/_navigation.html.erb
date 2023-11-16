@@ -6,7 +6,9 @@
       </a>
       <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <% unless current_user %>
-            <button type="button" class="px-4 py-2 text-sm font-medium text-center text-white bg-[var(--CL-orange)] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Log in</button>
+            <%= link_to 'Log In', new_user_session_path, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
+          <% else %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-gray-400 md:transition focus:ring-4 focus:outline-none focus:ring-blue-300' %>
           <% end %>
           <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -15,16 +17,16 @@
             </svg>
         </button>
       </div>
-      <div class="items-center justify-between hidden w-full text-sm md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <div class="items-center justify-between hidden w-full text-sm text-gray-900 md:flex md:w-auto md:order-1 " id="navbar-sticky">
         <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
           <li>
-            <a href="#" class="block px-3 py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-[var(--CL-orange)] md:p-0" aria-current="page">Home</a>
+            <%= link_to 'Home', root_path, class: 'block px-3 py-2  bg-blue-700 rounded md:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:transition' %>
           </li>
           <li>
-            <a href="#" class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:dark:hover:bg-transparent dark:border-gray-700 md:transition">About</a>
           </li>
           <li>
-            <a href="#" class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+            <a href="#" class="block px-3 py-2 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[var(--CL-orange)] md:p-0 md:dark:hover:bg-transparent dark:border-gray-700 md:transition">Services</a>
           </li>
         </ul>
       </div>

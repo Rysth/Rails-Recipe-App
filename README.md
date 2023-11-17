@@ -122,7 +122,14 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Coming soon.**
+- [ ] 📅 Plan weekly or monthly meal schedules
+- [ ] 📤 Share recipes with friends or social media
+- [ ] 📱 Mobile app support for on-the-go access
+- [ ] 🌐 Integration with online grocery services
+- [ ] 🔄 Synchronize data across multiple devices
+- [ ] 🤖 AI-powered recipe recommendations
+- [ ] 🌱 Sustainability and nutrition insights for recipes
+- [ ] 🎨 Customize the app's theme and layout
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
       redirect_to root_path, alert: 'You cannot access it.'
       return
     end
-    @recipe_foods = @recipe.recipe_foods.includes(:food)
+    @recipe_foods = @recipe.recipe_foods.includes(food: [:user])
   end
 
   # GET /recipes/public

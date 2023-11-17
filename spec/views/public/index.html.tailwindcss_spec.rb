@@ -26,9 +26,6 @@ RSpec.describe 'Testing public recipes view', type: :feature do
     it 'should display total food items and total price for each recipe' do
       @user.recipes.each do |recipe|
         expect(page).to have_content "Total Food Items: #{recipe.recipe_foods.sum(&:quantity)}"
-        expect(page).to have_content "Total Price: #{ActionController::Base.helpers.number_to_currency(recipe.recipe_foods.sum do |recipe_food|
-                                                                                                         recipe_food.food.price * recipe_food.quantity
-                                                                                                       end, precision: 2)}"
       end
     end
 

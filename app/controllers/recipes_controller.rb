@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[new show edit update destroy]
+  before_action :set_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[public show]
 
   # GET /recipes or /recipes.json
@@ -8,7 +8,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/new
-  def new; end
+  def new
+    @recipe = Recipe.new
+  end
 
   def edit
     unless current_user == @recipe.user
@@ -41,10 +43,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
-        redirect_to recipes_path
       else
         format.html { render :new, status: :unprocessable_entity }
-        redirect_to new_recipe_path
       end
     end
   end

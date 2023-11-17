@@ -49,17 +49,16 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'bullet'
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails'
   gem 'letter_opener'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'shoulda-matchers', '~> 5.3'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'bullet'
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -72,6 +71,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 5.3'
 end
 
 gem 'foreman', '~> 0.87.2'

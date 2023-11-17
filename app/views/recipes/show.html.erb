@@ -18,7 +18,7 @@
       <p class="mt-5 text-sm text-justify sm:mt-8 sm:text-base"><%= @recipe.description %></p>
     </header>
     <div class="flex items-center justify-between mt-5">
-      <%= button_to 'Generate Shopping List', recipe_path(@recipe), method: :put, class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
+      <%= link_to 'Generate Shopping List', recipe_shopping_lists_path(@recipe), class: 'text-white btn-info rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none grid place-items-center' %>  
       <% if current_user == @recipe.user %>
         <%= button_to 'Add Ingredient', edit_recipe_path(@recipe), method: :get, class: 'text-white btn-success rounded-full btn btn-sm sm:mt-3 inline-block relative z-[500] bg-gray-500 border-none' %>  
       <% end %>

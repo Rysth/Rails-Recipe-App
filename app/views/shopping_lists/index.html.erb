@@ -1,28 +1,29 @@
-<h1>Shopping List</h1>
+<h1 class="py-10 sm:py-16  md:py-24 text-2xl font-bold text-center sm:mb-10 sm:text-4xl md:text-5xl bg-[var(--CL-orange)] text-white">Shopping List</h1>
+  <div class="container max-w-screen-lg p-4 mx-auto">
+   <header class="flex flex-wrap items-center justify-between gap-3 mb-5">
+     <h2 class="font-semibold sm:text-xl">Amount of food items to buy:  <%= @food_quantity %></p>
+     <h2 class="font-semibold sm:text-xl">Total value of food needed:  <%= number_to_currency(@total_value, precision: 2) %></p>
+   </header>
+     <div class="mt-5 overflow-auto max-h-96">
 
-<%= form_with url: shopping_list_path, method: :post do |form| %>
-  <%= form.label :amount, "Amount of items to buy" %>
-  <%= form.number_field :amount, min: 1 %>
-  <%= form.submit "Calculate" %>
-<% end %>
+    <table class="relative w-full">
+      <thead class="sticky top-0 w-full text-white rounded-none">
+        <tr class="rounded-none text-left bg-[var(--CL-orange)]">
+          <th class="p-2 min-w-[175px]">Food</th>
+          <th class="p-2 min-w-[175px]">Quantity</th>
+          <th class="p-2 min-w-[175px]">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe_foods.each do |recipe_food| %>
+          <tr class="min-w-[175px] border text-sm">
+            <td class="p-2"><%= recipe_food.food.name %></td>
+            <td class="p-2"><%= recipe_food.quantity  %> <%= recipe_food.food.measurement_unit  %></td>
+            <td class="p-2"><%= number_to_currency((recipe_food.food.price * recipe_food.quantity), precision: 2) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
 
-<p>Total value of food needed: <%= @total_value %></p>
-
-<table class="relative w-full">
-  <thead class="sticky top-0 w-full text-white rounded-none">
-    <tr class="rounded-none text-left bg-[var(--CL-orange)]">
-      <th class="p-2 min-w-[175px]">Food</th>
-      <th class="p-2 min-w-[175px]">Quantity</th>
-      <th class="p-2 min-w-[175px]">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @recipe_foods.each do |recipe_food| %>
-      <tr class="min-w-[175px] border text-sm">
-        <td class="p-2"><%= recipe_food.food.name %></td>
-        <td class="p-2"><%= recipe_food.quantity %></td>
-        <td class="p-2"><%= number_to_currency((recipe_food.food.price * recipe_food.quantity), precision: 2) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

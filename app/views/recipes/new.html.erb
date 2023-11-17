@@ -8,6 +8,10 @@
     <%= form.number_field :cooking_time, placeholder: "Cooking Time (min)"%>
     <%= form.text_area :description, placeholder:"Description", class:'h-32 resize-none'%>
     <fieldset>
+      <%= form.label :public, "Public Recipe" %>
+      <%= form.check_box :public %>
+    </fieldset>
+    <fieldset>
       <%= form.submit "Add new Recipe", class:'float-right text-white bg-green-600 rounded-full btn btn-success border-none'%>
     </fieldset>
   <% end %>

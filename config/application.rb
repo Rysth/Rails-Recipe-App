@@ -6,10 +6,10 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RoRTemplate
+module RailsRecipeApp
   class Application < Rails::Application
     # Charge dotenv module.
-    Dotenv::Railtie.load
+    # Dotenv::Railtie.load
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 

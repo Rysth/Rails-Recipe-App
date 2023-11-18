@@ -40,7 +40,7 @@
               <td class="p-2"><%= recipe_food.quantity %></td>
               <td class="p-2"><%= number_to_currency((recipe_food.food.price * recipe_food.quantity), precision: 2) %></td>
               <td class="flex justify-center p-2">
-                <% if current_user == recipe_food.food.user %>
+                <% if current_user == recipe_food.recipe.user %>
                       <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-xs btn-error bg-red-600 text-white' %>
                 <% end %>
               </td>

@@ -15,11 +15,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: john
-  password: 12345
-  host: localhost
+  # username: john
+  # password: 12345
+  # host: localhost
   # Change to 5432 if needed.
-  port: 5433
+  # port: 5433
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -32,10 +32,10 @@ development:
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: ro_r_template
+  # username: rysthcraft
 
   # The password associated with the PostgreSQL role (username).
-  #password:
+  # password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -44,7 +44,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
